@@ -18,7 +18,7 @@ export const getTask =  async (req, res) => {
             msg: 'Berhasil tampilkan data',
             data: response
         });
-
+        console.log(mulai);
     } catch (error) {
         res.status(500).json({
             msg: error.message

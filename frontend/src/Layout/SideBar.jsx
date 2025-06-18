@@ -9,19 +9,19 @@ function SideBar() {
             <p>General</p>
             <ul className='sidebar-nav-list'style={{ listStyle: 'none' }}>
               <li className='sidebar-nav-item  mb-3'>
-                <NavLink className='d-flex align-items-center'>
+                <NavLink className='d-flex align-items-center' >
                   <LayoutDashboard className='me-2'/>
                   <span>Dashboard</span>
                 </NavLink>
               </li>
               <li className='sidebar-nav-item mb-3'>
-                <NavLink className='d-flex align-items-center'>
+                <NavLink className='d-flex align-items-center' to={"/task/add"}>
                   <CalendarPlus className='me-2 '/>
                   <span>Create Task</span>
                 </NavLink>
               </li>
               <li className='sidebar-nav-item mb-3'>
-                <NavLink className='d-flex align-items-center'>
+                <NavLink className='d-flex align-items-center' to={"/task"}>
                   <List className='me-2'/>
                   <span>Show Tasks Today</span>
                 </NavLink>
