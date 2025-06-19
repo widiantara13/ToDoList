@@ -1,6 +1,6 @@
 import db from '../config/Config.js';
-import { DataTypes } from 'sequelize';
-
+import { DataTypes, HasMany } from 'sequelize';
+import User from './UserModel.js'
 const Task = db.define('task', {
     title:{
         type: DataTypes.STRING,
@@ -14,6 +14,14 @@ const Task = db.define('task', {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: false
+    },
+    userId:{
+
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate:{
+            notEmpty: true
+        }
     }
 
 },{
@@ -21,11 +29,9 @@ const Task = db.define('task', {
     timestamps: true
 });
 
+User.hasMany(Task);
+Task.belongsTo(User);
+
+
 export default Task;
 
-( 
-    async () => {
-        await db.sync();
-        console.log("Database and tables created successfully!")
-    }
-)();
